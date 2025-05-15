@@ -27,7 +27,17 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <header className="fixed top-0 left-0 w-full z-50 transition-transform duration-300 bg-transparent">
+          <nav className="container mx-auto flex items-center justify-between p-4">
+            <div className="text-xl font-bold">Logo</div>
+            <ul className="flex space-x-4">
+              <li>Home</li>
+              <li>About</li>
+              <li>Contact</li>
+            </ul>
+          </nav>
+        </header>
+        <main className="pt-16">{children}</main>
       </body>
     </html>
   );
