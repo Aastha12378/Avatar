@@ -1,0 +1,142 @@
+.sticky-header {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 40px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+}
+
+.sticky-header .logo {
+  font-weight: bold;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+}
+
+.sticky-header nav a {
+  margin: 0 16px;
+  color: #222;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.header-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.sign-in, .get-started {
+  border: none;
+  background: none;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 8px 18px;
+  border-radius: 20px;
+}
+
+.get-started {
+  background: #222;
+  color: #fff;
+}
+
+.how-it-works-section {
+  text-align: center;
+  padding: 60px 0 40px 0;
+  background: #fff;
+}
+
+.simple-process {
+  color: #3b82f6;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.how-it-works-title {
+  font-size: 2.6rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.how-it-works-desc {
+  color: #666;
+  margin-bottom: 40px;
+}
+
+.steps-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.step {
+  background: none;
+  max-width: 240px;
+  text-align: center;
+}
+
+.step-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 18px auto;
+  border-radius: 50%;
+  background: #e0edff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+}
+
+.step-icon.upload::before {
+  content: "⭳";
+  color: #3b82f6;
+  font-size: 2.2rem;
+}
+.step-icon.style::before {
+  content: "🎨";
+  color: #3b82f6;
+  font-size: 2.2rem;
+}
+.step-icon.ai::before {
+  content: "⚡";
+  color: #3b82f6;
+  font-size: 2.2rem;
+}
+.step-icon.download::before {
+  content: "⬇️";
+  color: #3b82f6;
+  font-size: 2.2rem;
+}
+
+.arrow {
+  width: 40px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.arrow::after {
+  content: "→";
+  font-size: 2rem;
+  color: #bbb;
+}
+
+@media (max-width: 900px) {
+  .steps-row {
+    flex-direction: column;
+    gap: 0;
+  }
+  .arrow {
+    width: 100%;
+    height: 30px;
+    justify-content: center;
+  }
+  .arrow::after {
+    content: "↓";
+    font-size: 2rem;
+  }
+}
