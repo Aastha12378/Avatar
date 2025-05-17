@@ -1,12 +1,10 @@
 "use client";
 import Image from "next/image";
-import Link from "next/link";
 import React, { useState, useRef, useEffect } from "react";
 import { Button } from "./components/ui/button";
 import "../app/components/HeroSection/HowItWorks.css";
 import { InfiniteMarquee } from "./components/ui/infiniteMarquee";
-import SignInModal from "./components/signIn/page";
-import Signup from "./components/signup/page";
+import Header from "./components/Header";
 
 const styleOptions = [
   { src: "/images/cartoon.png", alt: "3D cartoon style" },
@@ -77,72 +75,10 @@ export default function Home() {
     };
   }, []);
 
-  // Modal state
-  const [showSignInModal, setShowSignInModal] = useState(false);
-  const [showSignUpModal, setShowSignUpModal] = useState(false);
-
   return (
     <React.Fragment>
-      {/* Navigation */}
-      <header className="container mx-auto m-4 py-4 px-4 sticky top-0 z-50 bg-white shadow-sm rounded-full transition-all duration-300 ease-in-out">
-        <nav className="flex items-center justify-between">
-          <div className="flex items-center gap-8">
-            <button
-              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-              className="text-2xl font-bold focus:outline-none"
-            >
-              pfp.fm
-            </button>
-            <div className="hidden md:flex items-center space-x-6">
-              <Link
-                href="#Before-After"
-                className="text-sm font-medium hover:text-gray-600"
-              >
-                Before & After
-              </Link>
-              <Link
-                href="#how-it-works"
-                className="text-sm font-medium hover:text-gray-600"
-              >
-                How It Works
-              </Link>
-              <Link
-                href="#pricing"
-                className="text-sm font-medium hover:text-gray-600"
-              >
-                Pricing
-              </Link>
-            </div>
-          </div>
-          <div className="flex items-center gap-4">
-            <button
-              className="text-sm font-medium hover:text-gray-600"
-              onClick={() => {
-                setShowSignUpModal(false);
-                setShowSignInModal(true);
-              }}
-            >
-              Sign In
-            </button>
-            <Button className="rounded-full bg-black text-white hover:bg-gray-800">
-              Get Started
-            </Button>
-          </div>
-        </nav>
-      </header>
-
-      {/* Modals */}
-      {showSignInModal && (
-        <SignInModal
-          onClose={() => setShowSignInModal(false)}
-        />
-      )}
-      {showSignUpModal && (
-        <Signup
-          onClose={() => setShowSignUpModal(false)}
-        />
-      )}
-
+      {/* Header with ImageStyleSelector trigger */}
+      <Header />
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
